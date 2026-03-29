@@ -1,0 +1,30 @@
+{
+  "CRM": {
+    "TITLE": "CRM Pipeline",
+    "SIDEBAR_TITLE": "CRM",
+    "ADD_DEAL": "Add Deal",
+    "NO_PIPELINE": "No pipelines available. Please create one to get started.",
+    "CREATE_PIPELINE": "Create Pipeline",
+    "DROP_HERE": "Drop here",
+    "MOVE_ERROR": "Failed to move deal.",
+    "DELETE_CONFIRM": "Are you sure you want to delete the deal %{title}?",
+    "FORM": {
+      "EDIT": "Edit Deal",
+      "NEW": "New Deal",
+      "TITLE": "Deal Title",
+      "TITLE_PLACEHOLDER": "Enter deal title",
+      "STAGE": "Pipeline Stage",
+      "VALUE": "Estimated Value",
+      "STATUS": "Status",
+      "LOST_REASON": "Reason for loss",
+      "LOST_REASON_PLACEHOLDER": "Why was this deal lost?",
+      "UPDATE": "Update Deal",
+      "CREATE": "Create Deal"
+    },
+    "STATUS": {
+      "OPEN": "Open",
+      "WON": "Won",
+      "LOST": "Lost"
+    }
+  }
+}

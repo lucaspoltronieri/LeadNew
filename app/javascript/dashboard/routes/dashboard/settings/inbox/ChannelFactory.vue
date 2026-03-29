@@ -12,6 +12,7 @@ import Telegram from './channels/Telegram.vue';
 import Instagram from './channels/Instagram.vue';
 import Tiktok from './channels/Tiktok.vue';
 import Voice from './channels/Voice.vue';
+import Evolution from './channels/EvolutionWhatsapp.vue';
 
 const channelViewList = {
   facebook: Facebook,
@@ -21,6 +22,7 @@ const channelViewList = {
   email: Email,
   sms: Sms,
   whatsapp: Whatsapp,
+  evolution: Evolution,
   line: Line,
   telegram: Telegram,
   instagram: Instagram,

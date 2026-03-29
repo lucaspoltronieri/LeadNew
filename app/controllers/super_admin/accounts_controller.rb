@@ -37,6 +37,16 @@ class SuperAdmin::AccountsController < SuperAdmin::ApplicationController
     permitted_params = super
     permitted_params[:limits] = permitted_params[:limits].to_h.compact
     permitted_params[:selected_feature_flags] = params[:enabled_features].keys.map(&:to_sym) if params[:enabled_features].present?
+    
+    # Permit nested attributes for AccountBilling and TokenLedger
+    if params[:account][:account_billing_attributes].present?
+      permitted_params[:account_billing_attributes] = params.require(:account).permit(account_billing_attributes: [:id, :subscription_status, :plan_type, :_destroy])[:account_billing_attributes]
+    end
+
+    if params[:account][:token_ledger_attributes].present?
+      permitted_params[:token_ledger_attributes] = params.require(:account).permit(token_ledger_attributes: [:id, :tokens_purchased, :tokens_used, :_destroy])[:token_ledger_attributes]
+    end
+
     permitted_params
   end
 

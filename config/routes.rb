@@ -87,6 +87,15 @@ Rails.application.routes.draw do
             delete :avatar, on: :member
             post :reset_access_token, on: :member
           end
+          resources :ai_agents, only: [:index, :create, :update, :destroy]
+          resources :crm_pipelines, only: [:index, :show, :create, :update, :destroy] do
+            resources :crm_stages, only: [:index, :create, :update, :destroy]
+          end
+          resources :crm_deals, only: [:index, :show, :create, :update, :destroy] do
+            member do
+              patch :move
+            end
+          end
           resources :contact_inboxes, only: [] do
             collection do
               post :filter
@@ -363,6 +372,10 @@ Rails.application.routes.draw do
       # end of account scoped api routes
       # ----------------------------------
 
+      namespace :webhooks do
+        resource :asaas, only: [:create], controller: :asaas
+      end
+
       namespace :integrations do
         resources :webhooks, only: [:create]
       end
@@ -571,6 +584,8 @@ Rails.application.routes.draw do
   post 'webhooks/instagram', to: 'webhooks/instagram#events'
   post 'webhooks/tiktok', to: 'webhooks/tiktok#events'
   post 'webhooks/shopify', to: 'webhooks/shopify#events'
+  post 'webhooks/evolution', to: 'webhooks/evolution#process_payload'
+  post 'webhooks/asaas', to: 'api/v1/webhooks/asaas#create'
 
   namespace :twitter do
     resource :callback, only: [:show]

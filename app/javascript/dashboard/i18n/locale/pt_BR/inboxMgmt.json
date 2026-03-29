@@ -488,6 +488,10 @@
           "VOICE": {
             "TITLE": "Voz",
             "DESCRIPTION": "Integre com o Twilio Voice"
+          },
+          "EVOLUTION": {
+            "TITLE": "WhatsApp (Não Oficial)",
+            "DESCRIPTION": "Conectar seu WhatsApp via Evolution API (Baileys)"
           }
         }
       },

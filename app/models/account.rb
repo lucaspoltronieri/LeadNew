@@ -99,6 +99,9 @@ class Account < ApplicationRecord
   has_many :account_users, dependent: :destroy_async
   has_many :agent_bot_inboxes, dependent: :destroy_async
   has_many :agent_bots, dependent: :destroy_async
+  has_many :ai_agents, dependent: :destroy_async
+  has_many :crm_pipelines, dependent: :destroy_async
+  has_many :crm_deals, dependent: :destroy_async
   has_many :api_channels, dependent: :destroy_async, class_name: '::Channel::Api'
   has_many :articles, dependent: :destroy_async, class_name: '::Article'
   has_many :assignment_policies, dependent: :destroy_async
@@ -138,6 +141,12 @@ class Account < ApplicationRecord
   has_many :webhooks, dependent: :destroy_async
   has_many :whatsapp_channels, dependent: :destroy_async, class_name: '::Channel::Whatsapp'
   has_many :working_hours, dependent: :destroy_async
+
+  has_one :account_billing, dependent: :destroy
+  has_one :token_ledger, dependent: :destroy
+
+  accepts_nested_attributes_for :account_billing, allow_destroy: true
+  accepts_nested_attributes_for :token_ledger, allow_destroy: true
 
   has_one_attached :contacts_export
 

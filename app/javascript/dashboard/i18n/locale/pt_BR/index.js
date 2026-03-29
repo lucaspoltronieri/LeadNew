@@ -15,6 +15,7 @@ import contactFilters from './contactFilters.json';
 import contentTemplates from './contentTemplates.json';
 import conversation from './conversation.json';
 import csatMgmt from './csatMgmt.json';
+import crm from './crm.json';
 import customRole from './customRole.json';
 import datePicker from './datePicker.json';
 import emoji from './emoji.json';
@@ -60,6 +61,7 @@ export default {
   ...contentTemplates,
   ...conversation,
   ...csatMgmt,
+  ...crm,
   ...customRole,
   ...datePicker,
   ...emoji,

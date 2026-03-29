@@ -467,6 +467,13 @@ const menuItems = computed(() => {
       ],
     },
     {
+      name: 'CRM',
+      label: t('CRM.SIDEBAR_TITLE'),
+      icon: 'i-lucide-kanban-square',
+      to: accountScopedRoute('crm_kanban'),
+      activeOn: ['crm_kanban'],
+    },
+    {
       name: 'Reports',
       label: t('SIDEBAR.REPORTS'),
       icon: 'i-lucide-chart-spline',
@@ -663,6 +670,12 @@ const menuItems = computed(() => {
           label: t('SIDEBAR.AGENT_BOTS'),
           icon: 'i-lucide-bot',
           to: accountScopedRoute('agent_bots'),
+        },
+        {
+          name: 'Settings AI Agents',
+          label: t('AI_AGENTS.HEADER'),
+          icon: 'i-lucide-brain-circuit',
+          to: accountScopedRoute('ai_agents_wrapper'),
         },
         {
           name: 'Settings Macros',

@@ -381,7 +381,8 @@
     "DOCS": "Ler documentos",
     "SECURITY": "Segurança",
     "CAPTAIN_AI": "Capitão",
-    "CONVERSATION_WORKFLOW": "Fluxo de Conversa"
+    "CONVERSATION_WORKFLOW": "Fluxo de Conversa",
+    "CRM": "CRM LeadNew"
   },
   "CAPTAIN_SETTINGS": {
     "TITLE": "Configurações do Capitão",
@@ -461,6 +462,12 @@
       "BUTTON_TXT": "Fale conosco no chat"
     },
     "NO_BILLING_USER": "A sua conta de cobrança está sendo configurada. Atualize a página e tente novamente.",
+    "AI_TOKENS": {
+      "TITLE": "Tokens de IA (LeadNew)",
+      "DESCRIPTION": "Gerencie seus tokens para automação e agentes de IA. Cada mensagem processada consome tokens baseado no modelo.",
+      "RECHARGE": "Recarregar Tokens",
+      "BALANCE_HELP": "Tokens disponíveis para uso imediato"
+    },
     "TOPUP": {
       "BUY_CREDITS": "Comprar mais créditos",
       "MODAL_TITLE": "Comprar Créditos de IA",

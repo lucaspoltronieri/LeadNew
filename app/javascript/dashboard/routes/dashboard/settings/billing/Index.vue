@@ -191,6 +191,24 @@ onMounted(handleBillingPageLogic);
           </div>
         </BillingCard>
         <BillingCard
+          :title="$t('BILLING_SETTINGS.AI_TOKENS.TITLE')"
+          :description="$t('BILLING_SETTINGS.AI_TOKENS.DESCRIPTION')"
+        >
+          <template #action>
+            <ButtonV4 sm solid blue @click="openRechargeModal">
+              {{ $t('BILLING_SETTINGS.AI_TOKENS.RECHARGE') }}
+            </ButtonV4>
+          </template>
+          <div class="px-5 py-2">
+            <div class="text-2xl font-bold text-woot-600">
+              {{ currentAccount.token_balance }}
+            </div>
+            <div class="text-xs text-n-slate-9 mt-1">
+              {{ $t('BILLING_SETTINGS.AI_TOKENS.BALANCE_HELP') }}
+            </div>
+          </div>
+        </BillingCard>
+        <BillingCard
           v-if="captainEnabled"
           :title="$t('BILLING_SETTINGS.CAPTAIN.TITLE')"
           :description="$t('BILLING_SETTINGS.CAPTAIN.DESCRIPTION')"

@@ -90,9 +90,9 @@ services:
     volumes:
       - postgres:/data/postgres
     environment:
-      - POSTGRES_DB=chatwoot
+      - POSTGRES_DB=leadnew_development
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=
+      - POSTGRES_PASSWORD=postgres
 
   redis:
     image: redis:alpine
@@ -109,6 +109,31 @@ services:
     ports:
       - 1025:1025
       - 8025:8025
+
+  evolution_redis:
+    image: redis:7-alpine
+    container_name: evolution_redis
+    command: redis-server --appendonly yes
+    volumes:
+      - ./docker/evolution_redis/data:/data
+
+  evolution-api:
+    image: atendai/evolution-api:latest
+    container_name: evolution_api
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVER_URL=${EVOLUTION_SERVER_URL:-http://localhost:8080}
+      - API_KEY=${EVOLUTION_API_KEY:-leadnew_secret_key}
+      - CACHE_REDIS_ENABLED=true
+      - CACHE_REDIS_HOST=evolution_redis
+      - CACHE_REDIS_PORT=6379
+      - STORE_MESSAGES=true
+      - WEBHOOK_GLOBAL_ENABLED=true
+      - WEBHOOK_GLOBAL_URL=${FRONTEND_URL}/api/v1/webhooks/evolution
+    depends_on:
+      - evolution_redis
 
 volumes:
   postgres:

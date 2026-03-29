@@ -1,0 +1,30 @@
+{
+  "CRM": {
+    "TITLE": "Funil de Vendas",
+    "SIDEBAR_TITLE": "CRM",
+    "ADD_DEAL": "Nova Negociação",
+    "NO_PIPELINE": "Nenhum funil disponível. Crie um para começar.",
+    "CREATE_PIPELINE": "Criar Funil",
+    "DROP_HERE": "Solte aqui",
+    "MOVE_ERROR": "Falha ao mover a negociação.",
+    "DELETE_CONFIRM": "Tem certeza que deseja apagar a negociação %{title}?",
+    "FORM": {
+      "EDIT": "Editar Negociação",
+      "NEW": "Nova Negociação",
+      "TITLE": "Título da Negociação",
+      "TITLE_PLACEHOLDER": "Ex: Projeto ACME",
+      "STAGE": "Estágio no Funil",
+      "VALUE": "Valor Estimado",
+      "STATUS": "Status",
+      "LOST_REASON": "Motivo da Perda",
+      "LOST_REASON_PLACEHOLDER": "Por que esta negociação foi perdida?",
+      "UPDATE": "Atualizar",
+      "CREATE": "Criar"
+    },
+    "STATUS": {
+      "OPEN": "Aberto",
+      "WON": "Ganhou",
+      "LOST": "Perdeu"
+    }
+  }
+}

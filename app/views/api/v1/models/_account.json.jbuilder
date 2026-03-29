@@ -25,3 +25,4 @@ json.name @account.name
 json.support_email @account.support_email
 json.status @account.status
 json.cache_keys @account.cache_keys
+json.token_balance @account.token_ledger&.balance || 0
